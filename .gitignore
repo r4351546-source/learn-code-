@@ -1,1 +1,5 @@
 .vscode
+.idea
+*.xml
+*.iml
+vcs.xml
