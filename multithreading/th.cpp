@@ -26,4 +26,7 @@ int main() {
     t3.join();
     t4.join();
 
+    cin.get();
+    
+
 }
