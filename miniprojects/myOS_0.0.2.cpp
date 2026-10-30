@@ -160,15 +160,11 @@ void TF_os_main() {
         
         else if (command == "lsc") {
             cout << " ||folder list|| " << endl;
-            if(current->children.empty()) {
-                for(auto x : folders) {
-                    cout << "__>" << x << endl;
-                }
-            }   else { 
+            
                 for(auto const& [name , folder_ptr] : current->children) {
                     cout << "-->" << GREEN  << name << RESET << endl;
                 }
-            }
+            
         }
         else if(command == "cds") {
             string target;
@@ -254,7 +250,7 @@ void TF_os_main() {
 
         
     }
-}
+};
 
 int main() {
 
