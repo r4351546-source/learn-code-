@@ -46,7 +46,8 @@ enum class tokenType {
     leftparen,   //leftparen — (
     rightparen,  //rightparen — )
     leftbrace,   //leftbrace — {
-    rightbrace   //rightbrace — }
+    rightbrace,   //rightbrace — }
+    invalid
 };
 
 struct token {
