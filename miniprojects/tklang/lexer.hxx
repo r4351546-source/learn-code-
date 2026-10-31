@@ -5,7 +5,6 @@
 
 enum class tokenType {
     IDENTIFIER,
-    PRINT,
 
     //awarding
     ASSIGN,     //=
@@ -47,7 +46,8 @@ enum class tokenType {
     rightparen,  //rightparen — )
     leftbrace,   //leftbrace — {
     rightbrace,   //rightbrace — }
-    invalid
+    invalid,
+    eof
 };
 
 struct token {
@@ -56,15 +56,11 @@ struct token {
 };
 
 class lexer {
-    private: 
-    int line;
-    int column;
-
+    
+    private:
+    
     std::string src;
     std::vector<token> tokens;
-
-    //private for functions
-    private:
     char advance(); //переміщує на наступний символ
     char peek();    //дивиться на символ без переміщення
     void skipWhitespace(); 
@@ -75,9 +71,14 @@ class lexer {
     token readString();
     token readOperator();
 
+    int line = 1;
+    int column = 1;
+    std::size_t current = 0;
+    std::size_t start = 0;    
+
     void addToken(tokenType type, std::string value);
 
     public:
     std::vector<token> mainlexer(const std::string& source);
-    
+   
 };
