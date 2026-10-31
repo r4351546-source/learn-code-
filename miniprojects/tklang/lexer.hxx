@@ -31,7 +31,6 @@ enum class tokenType {
     //variables
     INTEGER,
     FLOAT,
-    STRING,
     CHAR,
     BOOL,
     
@@ -68,7 +67,6 @@ class lexer {
     void match();
     token readIdentifier();
     token readNumber();
-    token readString();
     token readOperator();
 
     int line = 1;
